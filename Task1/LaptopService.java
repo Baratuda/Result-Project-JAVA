@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class LaptopService {
    private static Scanner sc = new Scanner(System.in);
-   public static String inputVariables(Scanner sc, String message) {
+   private static String inputVariables(Scanner sc, String message) {
       System.out.print(message);
       return sc.nextLine();
    }

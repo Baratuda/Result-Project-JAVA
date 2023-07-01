@@ -23,17 +23,6 @@ public class LaptopService {
          return new Laptop(name,color,operatingSystem,volumeHd,RAM);
    }
 
-   public static void dispatcher(Map<String,List<Laptop>> laptopsDataBase){
-      System.out.println("Hello User!");
-      while(true){
-         String input = LaptopService.inputVariables(sc, "1.Create laptop\n2.Show laptop\n3.Exit\n");
-         if(input.equals("1")) laptopsDataBase.putAll(LaptopService.createLaptopDataBase());
-         if(input.equals("2")) System.out.println(LaptopService.showLaptops(laptopsDataBase));
-         if(input.equals("3")) break;
-      }
-      
-   }
-
    private static Map<String,List<Laptop>> createLaptopDataBase(){
       Map<String,List<Laptop>> ourLaptopMap = new HashMap<>();
       List<Laptop> arrayLaptops = new ArrayList<>();
@@ -77,5 +66,16 @@ public class LaptopService {
             }              
        }
        return results;               
+   }
+
+    public static void dispatcher(Map<String,List<Laptop>> laptopsDataBase){
+      System.out.println("Hello User!");
+      while(true){
+         String input = LaptopService.inputVariables(sc, "1.Create laptop\n2.Show laptop\n3.Exit\n");
+         if(input.equals("1")) laptopsDataBase.putAll(LaptopService.createLaptopDataBase());
+         if(input.equals("2")) System.out.println(LaptopService.showLaptops(laptopsDataBase));
+         if(input.equals("3")) break;
+      }
+      
    }
 }
